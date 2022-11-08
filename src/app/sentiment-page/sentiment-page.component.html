@@ -1,0 +1,43 @@
+<div class="container">
+    <div><span class="fs-2 fw-bold">{{sdescription}}</span> <span class="fs-2 fw-light mx-3">{{symbolName}}</span></div>
+    <div class="row my-4">
+        <div class="col-md-4" *ngFor="let d of newdata?.data">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <h5 class="card-title">{{months[d.month-1]}}</h5>
+                        <div class="col-6">
+                            
+                            <p class="card-text"><strong>MSPR:</strong> {{d.mspr}}</p>
+                            <p class="card-text"><strong>Change:</strong> {{d.change}}</p>
+                        </div>
+                        <div class="col-6">
+                            <!-- <div *ngIf="d.change>0">
+                                <img src="assets/green-arrow.png" width="4%">
+                            </div> -->
+                            <ng-container *ngIf="d.change>0; then greenarrow; else redarrow">
+                            </ng-container>
+                            <ng-template #greenarrow>
+                                <div>
+                                    <img src="assets/green-arrow.png" width="50%">
+                                </div>
+                            </ng-template>
+                            <ng-template #redarrow>
+                                <div>
+                                    <img src="assets/red-arrow1.png" width="50%">
+                                </div>
+                            </ng-template>
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <button class="button" type="button" routerLink="">Back to list of stocks</button>
+</div>
+
+
+

@@ -1,0 +1,23 @@
+
+<!-- <ng-template *ngIf="newdata"> -->
+<div *ngIf="closebool && valuesbool">
+  <div class="card my-4" >
+    <div class="card-header">
+        <span class="fw-bold ">{{sdescription}}</span>
+        <img src="{{arrowURL}}" width="4%" class="mx-3">
+        <button type="button" id="remove{{symbol}}" class="btn-close" style="float: right;" (click)="destroysymbol()" aria-label="Close"></button>
+        
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Change today: {{newdata?.d}}% </li>
+      
+      <li class="list-group-item">Opening price: {{newdata?.o | currency: "USD"}}</li>
+      <li class="list-group-item">Current price: {{newdata?.c| currency: "USD"}}</li>
+      <li class="list-group-item">High price: {{newdata?.h| currency: "USD"}}</li>
+      <button type="button" id="sentiment{{symbol}}" routerLink='sentiment/{{symbol}}'>Go to social sentiment details</button>
+    </ul>
+  </div>
+</div>
+    
+<!-- </ng-template> -->
+

@@ -1,0 +1,15 @@
+<div class="container m-5">
+    <form class="row g-3">
+      <div class="col-auto">
+        <input type="text" [formControl]="stockSymbol" maxlength="5" class="form-control" id="stockInput" >
+      </div>
+      <div class="col-auto">
+        <button type="button" class="btn btn-dark mb-3" id="trackBtn" (click)="saveArray()">Track Stock</button>
+      </div>
+    </form>
+<!-- <ng-template *ngIf="stockArray"> -->
+  <div *ngFor="let stocks of tempArray">
+    <app-stockquote [symbol]="stocks"></app-stockquote>
+  </div>
+<!-- </ng-template> -->
+
