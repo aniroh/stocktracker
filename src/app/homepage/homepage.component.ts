@@ -26,14 +26,14 @@ export class HomepageComponent implements OnInit{
       console.log("wow1");
 
       if (localStorage.getItem("stocks") === null) {
-        localStorage.setItem("stocks","[\""+this.stockSymbol.value+"\"]") //if empty, initiate the stocks property
+        localStorage.setItem("stocks","[\""+this.stockSymbol.value.toUpperCase()+"\"]") //if empty, initiate the stocks property
       }
       else{
         let stocks = localStorage.getItem("stocks");
         if(stocks!==null){
           this.stockArray=JSON.parse(stocks); //store it in a temporary array variable
         }
-        this.stockArray.push(this.stockSymbol.value); //push the new value in temporary array
+        this.stockArray.push(this.stockSymbol.value.toUpperCase()); //push the new value in temporary array
         console.log(this.stockArray)
         localStorage.setItem('stocks', JSON.stringify(this.stockArray)); //store in localstorage
       }
